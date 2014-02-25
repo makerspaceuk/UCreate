@@ -1,18 +1,17 @@
-import RPi.GPIO as GPIO
-import time
+import RPi.GPIO as GPIO, time
 from time import sleep
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(18, GPIO.OUT)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(12, GPIO.OUT)
 
 def buzz(pitch, duration):
         period = 1.0 / pitch
         delay = period / 2
         cycles = int(duration * pitch)
         for i in range(cycles):
-                GPIO.output(18, True)
+                GPIO.output(12, True)
                 time.sleep(delay)
-                GPIO.output(18, False)
+                GPIO.output(12, False)
                 time.sleep(delay)
 i=1
 while i <4 :
