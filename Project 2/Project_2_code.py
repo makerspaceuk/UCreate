@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
  
-GPIO.cleanup()
- 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
 GPIO.setup(10,GPIO.OUT)
 
 try: 
